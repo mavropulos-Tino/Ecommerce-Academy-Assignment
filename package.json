@@ -1,0 +1,33 @@
+{
+  "name": "ecommerce-academy-assignment",
+  "version": "1.0.0",
+  "description": "Academy semester assignment — building a fully functional E-Commerce website using HTML, CSS, and Vanilla JavaScript with live REST API data and a persistent shopping cart.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -t --dotfiles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavropulos-Tino/Ecommerce-Academy-Assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mavropulos-Tino/Ecommerce-Academy-Assignment/issues"
+  },
+  "homepage": "https://github.io/mavropulos-Tino/Ecommerce-Academy-Assignment",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "emailjs": "^5.0.0"
+  }
+}
