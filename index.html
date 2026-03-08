@@ -4,17 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce Academy Assignement</title>
-  <script type="module" crossorigin src="/Ecommerce-Academy-Assignment/assets/index-Df8Lmqj4.js"></script>
-  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/index-DBkz-poX.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script type="module" crossorigin src="/Ecommerce-Academy-Assignment/assets/index-C9ibxU6T.js"></script>
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/index-SoHhJ8DS.css">
 </head>
 <body>
-    <div class="product-grid">
+    <nav class="navbar navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container">
+        <a class="navbar-brand" href="#">Ecommerce Shop</a>
+        <a href="/" class="position-relative cart-btn" aria-label="Shopping cart"><i class="bi bi-bag"></i></i><span class="cart-badge">3</span></a>
+        </div>
+    </nav>
 
-    </div>
+    <section class="hero d-flex align-items-center">
+        <div class="hero-grid"></div>
+        <div class="container position-relative z-1 text-center">
+            <h1 class="hero-title">New Collection <br>Has Arrived</h1>
+            <p class="hero-subtitle">Curated pieces for the modern wardrobe.<br class="d-none d-md-block"> Quality you can feel, style you can own.</p>
+            <a class="hero-cta" href="#products-section">Shop Now <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+    </section>
 
-    <div class="pagiantion-container">
+    <section id="products-section" class="products-section">
+        <div class="products-title-band">
+            <div class="container"><h2 class="products-title">Products</h2></div>
+        </div>
 
-    </div>
+        <div class="container py-4">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-md-3 sticky-md-top" style="top: 5rem;">
+                    <div class="filter-bar">
+                        <h5 class="filter-title">Filters</h5>
+                        <div class="filter-group">
+                            <label class="filter-label" for="category-select">Categories</label>
+                            <select class="filter-select" id="category-select">
+                                <option value="all">All</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9 d-flex flex-column gap-3">
+                    <div class="d-flex flex-column flex-md-row align-items-center gap-2">
+                        <div class="flex-grow-1">
+                            <div class="search-bar d-flex align-items-center">
+                                <i class="bi bi-search search-icon"></i>
+                                <input type="text" class="search-input flex-grow-1" placeholder="Search products..." />
+                                <button class="search-clear" aria-label="Clear search">
+                                    <i class="bi bi-x"></i>
+                                </button>
+                                <button class="search-btn">Search</button>
+                            </div>
+                        </div>
+                        <select class="sort-select flex-shrink-0">
+                            <option value="">Sort by</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="product-grid"></div>
+
+                    <div class="pagiantion-container d-flex justify-content-center mt-3"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>
