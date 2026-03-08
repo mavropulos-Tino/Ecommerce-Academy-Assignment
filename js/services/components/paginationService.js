@@ -11,7 +11,7 @@ export const renderPagiantion = () => {
 
     const nav = document.createElement('nav');
     const ul = document.createElement('ul');
-    ul.classList.add('pagination');
+    ul.classList.add('pagination', 'flex-wrap', 'justify-content-center');
 
     ul.appendChild(renderPaginationPrevious(initializeShop));
     for (let i=1; i<=totalPages; i++) {
