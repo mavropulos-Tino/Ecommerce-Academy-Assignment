@@ -38,7 +38,7 @@
                         <div class="filter-group">
                             <label class="filter-label" for="category-select">Categories</label>
                             <select class="filter-select" id="category-select">
-                                <option value="all">All</option>
+                                <option value="all" placeholder>All</option>
                             </select>
                         </div>
                     </div>
@@ -48,16 +48,16 @@
                         <div class="flex-grow-1">
                             <div class="search-bar d-flex align-items-center">
                                 <i class="bi bi-search search-icon"></i>
-                                <input type="text" class="search-input flex-grow-1" placeholder="Search products..." />
-                                <button class="search-clear" aria-label="Clear search">
+                                <input id="search-input" type="text" class="search-input flex-grow-1" placeholder="Search products..." />
+                                <button class="search-clear" id="search-clear" aria-label="Clear search">
                                     <i class="bi bi-x"></i>
                                 </button>
-                                <button class="search-btn">Search</button>
+                                <button class="search-btn" id="search-button">Search</button>
                             </div>
                         </div>
                         <div class="sort-wrapper">
                             <select class="sort-select flex-shrink-0" id="sort-select">
-                                <option value="">Sort by</option>
+                                <option value="" placeholder>Sort by</option>
                                 <option value="price-asc">Price: Low to High</option>
                                 <option value="price-desc">Price: High to Low</option>
                             </select>
