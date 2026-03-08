@@ -24,7 +24,7 @@ export const renderProductCards = productCardsArray => {
         [thumbnail, title].forEach(element => {
             element.addEventListener('click', () => {
                 localStorage.setItem('selectedProduct', JSON.stringify(productCard.id));
-                window.location.href = '/';
+                window.location.href = '/Ecommerce-Academy-Assignment/pages/productPage.html';
             });
         });
 

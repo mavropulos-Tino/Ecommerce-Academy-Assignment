@@ -239,6 +239,15 @@ body {
   background: #faf9f7;
   outline: none;
   cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'%3E%3Cpath fill='%237a7468' d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  padding-right: 2rem;
+}
+
+.filter-select:focus {
+  border-color: #c8a96e;
 }
 
 .product-grid {
@@ -257,24 +266,22 @@ body {
 
 
 .card {
-  width: calc(25% - 0.75rem); /* 4 per row */
   border: 1.5px solid #e8e4dc;
   border-radius: 16px;
   background: #fff;
   overflow: hidden;
   transition: box-shadow 250ms, transform 250ms;
   margin-top: 0 !important;
+  width: calc(25% - 0.75rem);
 }
 @media (max-width: 992px) {
-  .card { width: calc(33.333% - 0.67rem); } /* 3 per row */
+  .card { width: calc(33.333% - 0.67rem); }
 }
-
 @media (max-width: 768px) {
-  .card { width: calc(50% - 0.5rem); } /* 2 per row */
+  .card { width: calc(50% - 0.5rem); }
 }
-
 @media (max-width: 480px) {
-  .card { width: 100%; } /* 1 per row */
+  .card { width: 100%; }
 }
 
 .card:hover {
