@@ -14,6 +14,7 @@ const resetCategory = () => {
 const executeSearch = () => {
     const searchTerm = searchInput.value.toLowerCase().trim();
     if(state.searchTerm === searchTerm) return;
+    if(!searchTerm) return;
 
     state.searchTerm = searchTerm || null;
     resetCategory();

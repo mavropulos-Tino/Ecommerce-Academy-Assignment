@@ -10,7 +10,6 @@
 </head>
 <body class="bg-light-subtle">
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-light bg-white border-bottom shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand" href="/">Ecommerce Shop</a>
@@ -21,7 +20,6 @@
         </div>
     </nav>
 
-    <!-- BREADCRUMB -->
     <div class="bg-white border-bottom">
         <div class="container py-2">
             <nav aria-label="breadcrumb">
@@ -34,7 +32,6 @@
         </div>
     </div>
 
-    <!-- PRODUCT PAGE -->
     <main class="container py-5">
         <div class="row g-4 g-xl-5">
 
@@ -124,7 +121,7 @@
 
             <!-- COL 3 — Purchase Panel -->
             <div class="col-12 col-md-3 col-xl-3">
-                <div class="purchase-panel rounded-3 p-4 d-flex flex-column gap-3 sticky-md-top" style="top: 5rem;">
+                <div class="purchase-panel rounded-3 p-4 d-flex flex-column gap-3">
 
                     <!-- Stock -->
                     <div class="d-flex align-items-center justify-content-between">
@@ -188,6 +185,11 @@
 
         </div>
     </main>
+
+    <section class="related-section container">
+        <h2 class="products-title mb-4">Related Products</h2>
+        <div class="related-grid" id="related-grid"></div>
+    </section>
     
     <script type="module" src="/js/controllers/productPageLoader.js"></script>
 </body>

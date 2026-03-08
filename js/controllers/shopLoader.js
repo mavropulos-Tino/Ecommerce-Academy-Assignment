@@ -22,6 +22,7 @@ export const shopLoader = async () => {
     new Choices('#sort-select', {
         searchEnabled: false,
         itemSelectText: '',
+        shouldSort: false,
     });
 
     initializeShop();

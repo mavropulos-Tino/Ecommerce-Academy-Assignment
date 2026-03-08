@@ -1,4 +1,4 @@
-export const renderProductCards = productCardsArray => {
+export const renderProductCards = (productCardsArray, containerId = 'product-grid') => {
 
     productCardsArray.forEach(productCard => {
         const card = document.createElement('div');
@@ -21,6 +21,7 @@ export const renderProductCards = productCardsArray => {
 
         const thumbnail = card.querySelector('.card-thumbnail');
         const title = card.querySelector('.card-title');
+        
         [thumbnail, title].forEach(element => {
             element.addEventListener('click', () => {
                 localStorage.setItem('selectedProduct', JSON.stringify(productCard.id));
@@ -33,6 +34,6 @@ export const renderProductCards = productCardsArray => {
             // Adds to cart
         });
 
-        document.querySelector('.product-grid').appendChild(card);
+        document.querySelector(`.${containerId}`).appendChild(card);
     });
 };
