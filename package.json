@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "choices.js": "^11.1.0",
     "emailjs": "^5.0.0"
   }
 }

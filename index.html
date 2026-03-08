@@ -55,11 +55,14 @@
                                 <button class="search-btn">Search</button>
                             </div>
                         </div>
-                        <select class="sort-select flex-shrink-0">
-                            <option value="">Sort by</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="price-desc">Price: High to Low</option>
-                        </select>
+                        <div class="sort-wrapper">
+                            <select class="sort-select flex-shrink-0" id="sort-select">
+                                <option value="">Sort by</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                        
                     </div>
 
                     <div class="product-grid"></div>
