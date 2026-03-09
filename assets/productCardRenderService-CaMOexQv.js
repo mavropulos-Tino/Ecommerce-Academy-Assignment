@@ -1,0 +1,20 @@
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function s(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(t){if(t.ep)return;t.ep=!0;const i=s(t);fetch(t.href,i)}})();const L="https://dummyjson.com",b="/Ecommerce-Academy-Assignment/",f=(e,a)=>{let s=null;e==="success"&&(s="alert-success"),e==="warning"&&(s="alert-warning"),e==="error"&&(s="alert-danger");const n=document.createElement("div");n.classList.add("alert",s),n.setAttribute("role","alert"),n.textContent=a,n.style.position="fixed",n.style.bottom="1rem",n.style.left="1rem",n.style.zIndex="9999",document.body.appendChild(n),setTimeout(()=>{n.remove()},3e3)},d=e=>{localStorage.setItem("cart",JSON.stringify(e))},c=()=>{const e=localStorage.getItem("cart");return e?JSON.parse(e):[]},p=e=>{const a=c();if(e.stock===0)return;const s=a.find(n=>n.id===e.id);if(s){if(s.quantity>=e.stock)return;s.quantity++}else{const n={thumbnail:e.thumbnail,category:e.category,name:e.name,rating:e.rating,reviews:e.reviews,price:e.price,id:e.id,quantity:1};a.push(n)}d(a)},h=(e,a)=>{const s=c(),n=s.find(t=>t.id===e);n&&(n.quantity>=a||(n.quantity++,d(s)))},v=(e,a)=>{const s=c(),n=s.find(t=>t.id===e);if(n)if(n.quantity===1){const t=s.filter(i=>i.id!==e);d(t)}else n.quantity--,d(s)},E=()=>{const e=c();let a=0;return e.forEach(s=>a+=s.price*s.quantity),a},q=()=>{const e=c();let a=0;return e.forEach(s=>a+=s.quantity),a},I=()=>{localStorage.removeItem("cart"),f("warning","product removed from shopping cart!")},l=(e,a)=>{const n=JSON.parse(localStorage.getItem("cart")||"[]").find(t=>t.id===a.id);n?e.innerHTML=`
+            <div class="cart-item-controls">
+                <button class="btn-decrease"><i class="bi bi-dash"></i></button>
+                <span class="btn-count">${n.quantity}</span>
+                <button class="btn-increase" ${n.quantity>=a.stock?"disabled":""}><i class="bi bi-plus"></i></button>
+            </div>
+        `:e.innerHTML=`
+            <button type="button" class="btn-add">Add to Cart</button>
+        `},u=()=>{const e=document.querySelector(".cart-badge");e.textContent=q()},$=(e,a="product-grid",s=!1)=>{const n=document.querySelector(`.${a}`);e.forEach(t=>{const i=document.createElement("div");i.classList.add("card"),i.innerHTML=`
+            <img class="card-thumbnail" src="${t.thumbnail}" alt="${t.name}" />
+            <div class="card-body">
+                <span class="card-brand">${t.category}</span>
+                <p class="card-title">${t.name}</p>
+                <div class="card-rating">
+                    <span class="card-rating-score">${t.rating}</span>
+                    <span>(${t.reviews.length} reviews)</span>
+                </div>
+                <p class="card-price">$${t.price}</p>
+                <div class="card-btn"></div>
+            </div>`;const r=i.querySelector(".card-btn");l(r,t);const m=i.querySelector(".card-thumbnail"),g=i.querySelector(".card-title");[m,g].forEach(o=>{o.addEventListener("click",()=>{localStorage.setItem("selectedProduct",JSON.stringify(t.id)),window.location.href=`${b}pages/productPage.html`})}),r.addEventListener("click",o=>{o.target.closest(".btn-add")&&(p(t),l(r,t),u(),f("success","product added to shopping cart!")),o.target.closest(".btn-increase")&&(h(t.id,t.stock),l(r,t),u()),o.target.closest(".btn-decrease")&&(v(t.id),l(r,t),u(),s&&(c().find(y=>y.id===t.id)||(i.remove(),f("warning","product removed from shopping cart!"))))}),n.appendChild(i)})};export{L as B,b as a,l as b,f as c,p as d,v as e,E as f,c as g,I as h,h as i,$ as r,u};
