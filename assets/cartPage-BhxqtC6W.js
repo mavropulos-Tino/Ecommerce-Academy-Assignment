@@ -1,1 +1,0 @@
-import{g as e,r,u as a}from"./productCardRenderService-DzItbzXa.js";const n=async()=>{const t=e();document.getElementById("cart-grid").innerHTML="",t&&r(t,"cart-grid",!0)};document.addEventListener("DOMContentLoaded",()=>{n(),a()});
