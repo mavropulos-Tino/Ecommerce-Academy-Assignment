@@ -11,5 +11,6 @@ export class ProductCard {
         this.price = data.price;
         
         this.id = data.id;
+        this.stock = data.stock;
     }
 }

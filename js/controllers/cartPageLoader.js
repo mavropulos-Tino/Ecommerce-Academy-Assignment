@@ -1,7 +1,7 @@
-import { initializeProductPage } from "../services/pages/productPage.js";
+import { initializeCartPage } from "../services/pages/cartPage.js";
 import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeProductPage();
+    initializeCartPage();
     updateCartBadge();
 });

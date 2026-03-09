@@ -5,6 +5,8 @@ import { initializeShop } from "../services/pages/shopPage";
 import { fetchCategories } from '/js/services/coreServices/fetching/categoryApiService.js';
 import { renderCategories } from '/js/services/coreServices/rendering/categoryRenderService.js';
 
+import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
+
 import '/js/services/components/filterService.js';
 import '/js/services/components/searchService.js';
 import '/js/services/components/sortService.js';
@@ -15,8 +17,7 @@ export const shopLoader = async () => {
     const catgeoriesArray = await fetchCategories();
     renderCategories(catgeoriesArray);
 
-    categorySelect = new Choices('#category-select', { // choicesJS
-        searchEnabled: true,
+    categorySelect = new Choices('#category-select', {
         itemSelectText: '',
     });
     new Choices('#sort-select', {
@@ -26,4 +27,5 @@ export const shopLoader = async () => {
     });
 
     initializeShop();
+    updateCartBadge();
 }
