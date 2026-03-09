@@ -1,6 +1,7 @@
 import { addToCart, increaseQuantity, decreaseQuantity } from '/js/services/components/cartService.js';
 import { renderCartButton } from '/js/services/coreServices/rendering/cartButtonRenderService.js';
 import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
+
 import { BASE_PATH } from '/js/config.js';
 
 export const renderProductCards = (productCardsArray, containerId = 'product-grid') => {
@@ -31,7 +32,7 @@ export const renderProductCards = (productCardsArray, containerId = 'product-gri
         [thumbnail, name].forEach(element => {
             element.addEventListener('click', () => {
                 localStorage.setItem('selectedProduct', JSON.stringify(productCard.id));
-                window.location.href = `${BASE_PATH}/pages/productPage.html`;
+                window.location.href = `${BASE_PATH}pages/productPage.html`;
             });
         });
 

@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   server: {
     host: true
   },
-  base: '/Ecommerce-Academy-Assignment/'
-})
+  base: command === 'build' ? '/Ecommerce-Academy-Assignment/' : '/'
+}))

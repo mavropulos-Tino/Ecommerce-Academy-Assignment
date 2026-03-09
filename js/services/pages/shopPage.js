@@ -8,7 +8,11 @@ import { renderPagiantion } from '/js/services/components/paginationService.js';
 
 import { clearDisplay } from '/js/utilities';
 
+import { BASE_PATH } from '/js/config.js';
+
 export const initializeShop = async () => {
+    document.querySelector('.cart-btn').href = `${BASE_PATH}pages/cartPage.html`;
+
     const data = await fetchProducts();
     if (!data) return;
 
