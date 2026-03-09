@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  <script type="module" crossorigin src="/Ecommerce-Academy-Assignment/assets/cartPage-BCpb3pwe.js"></script>
-  <link rel="modulepreload" crossorigin href="/Ecommerce-Academy-Assignment/assets/cartBadgeService-DAz5Sdg9.js">
-  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/cartBadgeService-DBkz-poX.css">
+  <script type="module" crossorigin src="/Ecommerce-Academy-Assignment/assets/cartPage-BhxqtC6W.js"></script>
+  <link rel="modulepreload" crossorigin href="/Ecommerce-Academy-Assignment/assets/productCardRenderService-DzItbzXa.js">
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/productCardRenderService-63tAzvqW.css">
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/cartPage-D0CN-vxQ.css">
 </head>
 <body>
     <nav class="navbar navbar-light bg-white border-bottom shadow-sm sticky-top">
@@ -16,7 +17,85 @@
         </div>
     </nav>
 
-    cart page
+    <div class="bg-white border-bottom">
+        <div class="container py-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 small">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none breadcrumb-link">Home</a></li>
+                    <li class="breadcrumb-item active text-muted">Cart</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    
+    <main class="container py-5">
+        <div class="row g-4 align-items-start">
+
+            <!-- COL 1 — Cart items -->
+            <div class="col-12 col-lg-8 d-flex flex-column gap-3">
+
+                <!-- Title -->
+                <div class="cart-title-band">
+                    <h2 class="cart-title">Shopping Cart</h2>
+                    <span class="cart-item-count text-muted small" id="cart-item-count"></span>
+                </div>
+
+                <!-- Cart grid -->
+                <div class="cart-grid" id="cart-grid">
+                    
+                </div>
+
+            </div>
+
+            <!-- COL 2 — Summary sidebar -->
+            <div class="col-12 col-lg-4">
+                <div class="summary-panel rounded-3 p-4 d-flex flex-column gap-3 sticky-top" style="top: 5rem;">
+
+                    <h5 class="summary-title">Order Summary</h5>
+
+                    <!-- Item list -->
+                    <div class="summary-items d-flex flex-column gap-2" id="summary-items">
+                        <!-- Injected via JS -->
+                    </div>
+
+                    <hr class="text-muted opacity-25 my-0">
+
+                    <!-- Subtotal -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small text-muted">Subtotal</span>
+                        <span class="small" id="summary-subtotal">$0.00</span>
+                    </div>
+
+                    <!-- Tax -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="small text-muted">Tax (10%)</span>
+                        <span class="small" id="summary-tax">$0.00</span>
+                    </div>
+
+                    <hr class="text-muted opacity-25 my-0">
+
+                    <!-- Total -->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="summary-total-label">Total</span>
+                        <span class="summary-total-value" id="summary-total">$0.00</span>
+                    </div>
+
+                    <!-- Checkout button -->
+                    <button type="button" class="btn-buy-now w-100" id="btn-checkout">
+                        Checkout <i class="bi bi-arrow-right ms-1"></i>
+                    </button>
+
+                    <!-- Clear cart button -->
+                    <button type="button" class="btn-clear-cart w-100" id="btn-clear-cart">
+                        <i class="bi bi-trash me-2"></i>Clear Cart
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
 
 </body>
 </html>

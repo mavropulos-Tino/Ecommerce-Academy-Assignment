@@ -1,0 +1,1 @@
+class s{constructor(i){this.thumbnail=i.thumbnail,this.category=i.category,this.name=i.title,this.rating=i.rating,this.reviews=i.reviews,this.price=i.price,this.id=i.id,this.stock=i.stock}}const r=t=>t.map(i=>new s(i));export{r as m};
