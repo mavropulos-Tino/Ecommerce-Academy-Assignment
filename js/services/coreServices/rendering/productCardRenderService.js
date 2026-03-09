@@ -4,6 +4,8 @@ import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
 
 import { BASE_PATH } from '/js/config.js';
 
+import { callNotification } from '/js/services/components/notificationService.js';
+
 export const renderProductCards = (productCardsArray, containerId = 'product-grid', cartItem = false) => {
     const grid = document.querySelector(`.${containerId}`);
 
@@ -41,6 +43,8 @@ export const renderProductCards = (productCardsArray, containerId = 'product-gri
                 addToCart(productCard);
                 renderCartButton(btnContainer, productCard);
                 updateCartBadge();
+                
+                callNotification('success', 'product added to shopping cart!');
             }
             if(event.target.closest('.btn-increase')) {
                 increaseQuantity(productCard.id, productCard.stock);
@@ -54,7 +58,10 @@ export const renderProductCards = (productCardsArray, containerId = 'product-gri
 
                 if(cartItem) {
                     const stillInCart = getCart().find(item => item.id === productCard.id);
-                    if (!stillInCart) card.remove();
+                    if (!stillInCart) {
+                        card.remove();
+                        callNotification('warning', 'product removed from shopping cart!');
+                    }
                 }
             }
         });

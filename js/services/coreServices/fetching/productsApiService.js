@@ -1,6 +1,8 @@
 import { BASE_URL } from '/js/config.js';
 import { state } from '/js/state.js';
 
+import { callNotification } from '/js/services/components/notificationService.js';
+
 export const fetchProducts = async () => {
     const skip = state.limit * (state.currentPage - 1);
     let URL = '';
@@ -22,7 +24,7 @@ export const fetchProducts = async () => {
         if (!response.ok) throw new Error(`Response: ${response.status}`);
         return await response.json();
     } catch (error) {
-        console.error(error.message);
+        callNotification('error', `${error.message}`);
         return null;
     }
 }

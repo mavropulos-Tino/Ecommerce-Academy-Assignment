@@ -82,3 +82,10 @@ export const getCartCount = () => {
     cart.forEach(item => count += item.quantity);
     return count;
 }
+
+
+import { callNotification } from '/js/services/components/notificationService.js';
+export const clearCart = () => {
+    localStorage.removeItem('cart');
+    callNotification('warning', 'product removed from shopping cart!');
+}
