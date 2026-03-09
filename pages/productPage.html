@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Academy Assignement</title>
+
+  <script type="module" crossorigin src="/Ecommerce-Academy-Assignment/assets/productPage-DncVf_zR.js"></script>
+  <link rel="modulepreload" crossorigin href="/Ecommerce-Academy-Assignment/assets/cartBadgeService-DAz5Sdg9.js">
+  <link rel="modulepreload" crossorigin href="/Ecommerce-Academy-Assignment/assets/productCardRenderService.js-CCGTlLVW.js">
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/cartBadgeService-DBkz-poX.css">
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/productCardRenderService-CbdSgFS_.css">
+  <link rel="stylesheet" crossorigin href="/Ecommerce-Academy-Assignment/assets/productPage-B1B9dhI9.css">
+</head>
+<body class="bg-light-subtle">
+
+    <nav class="navbar navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Ecommerce Shop</a>
+            <a href="/pages/cartPage.html" class="position-relative cart-btn" aria-label="Shopping cart">
+                <i class="bi bi-bag"></i>
+                <span class="cart-badge" id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="bg-white border-bottom">
+        <div class="container py-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 small">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none breadcrumb-link">Home</a></li>
+                    <li class="breadcrumb-item breadcrumb-link" id="breadcrumb-category"></li>
+                    <li class="breadcrumb-item active text-muted" id="breadcrumb-name"></li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container py-5">
+        <div class="row g-4 g-xl-5">
+
+            <!-- COL 1 — Images -->
+            <div class="col-12 col-md-5 col-xl-4">
+                <div class="product-images">
+                    <!-- Main image -->
+                    <div class="product-main-image mb-3">
+                        <img id="main-image" src="" alt="" class="w-100 rounded-3 product-img-main" />
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="product-thumbnails d-flex gap-2 flex-wrap" id="thumbnail-strip">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- COL 2 — Product Info -->
+            <div class="col-12 col-md-4 col-xl-5">
+                <div class="d-flex flex-column gap-3 h-100">
+
+                    <!-- Brand + Category -->
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="product-brand" id="product-brand"></span>
+                        <span class="text-muted">·</span>
+                        <span class="product-category" id="product-category"></span>
+                    </div>
+
+                    <!-- Name -->
+                    <h1 class="product-name" id="product-name"></h1>
+
+                    <!-- Rating -->
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="product-stars" id="product-stars"></div>
+                        <span class="product-rating-score" id="product-rating"></span>
+                        <span class="text-muted small" id="product-review-count"></span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="product-price" id="product-price"></div>
+
+                    <hr class="text-muted opacity-25 my-1">
+
+                    <!-- Description -->
+                    <p class="product-description text-muted" id="product-description"></p>
+
+                    <!-- Tags -->
+                    <div class="d-flex flex-wrap gap-2" id="product-tags">
+                        <!-- Injected via JS -->
+                    </div>
+
+                    <!-- Dimensions + Weight -->
+                    <div class="product-specs rounded-3 p-3">
+                        <p class="specs-title mb-2">Specifications</p>
+                        <div class="row g-2 text-center">
+                            <div class="col-4">
+                                <div class="spec-item rounded-3 py-2 px-1">
+                                    <p class="spec-label mb-0">Weight</p>
+                                    <p class="spec-value mb-0" id="spec-weight"></p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="spec-item rounded-3 py-2 px-1">
+                                    <p class="spec-label mb-0">W × H</p>
+                                    <p class="spec-value mb-0" id="spec-wh"></p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="spec-item rounded-3 py-2 px-1">
+                                    <p class="spec-label mb-0">Depth</p>
+                                    <p class="spec-value mb-0" id="spec-depth"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div>
+                        <p class="specs-title mb-3">Customer Reviews</p>
+                        <div class="d-flex flex-column gap-3" id="product-reviews">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- COL 3 — Purchase Panel -->
+            <div class="col-12 col-md-3 col-xl-3">
+                <div class="purchase-panel rounded-3 p-4 d-flex flex-column gap-3">
+
+                    <!-- Stock -->
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="small text-muted">In Stock</span>
+                        <span class="small fw-semibold" id="product-stock"></span>
+                    </div>
+
+                    <div class="product-price" id="product-price-purchasePanel"></div>
+
+                    <!-- Quantity -->
+                    <div>
+                        <label class="filter-label mb-1">Quantity</label>
+                        <div class="quantity-selector d-flex align-items-center gap-2">
+                            <button class="qty-btn" id="qty-minus"><i class="bi bi-dash"></i></button>
+                            <span class="qty-value" id="qty-value">1</span>
+                            <button class="qty-btn" id="qty-plus"><i class="bi bi-plus"></i></button>
+                        </div>
+                    </div>
+
+                    <hr class="text-muted opacity-25 my-0">
+
+                    <!-- CTA Buttons -->
+                    <button type="button" class="btn-add-cart w-100" id="btn-add-cart">
+                        <i class="bi bi-bag me-2"></i>Add to Cart
+                    </button>
+                    <button type="button" class="btn-buy-now w-100" id="btn-buy-now">
+                        Buy Now
+                    </button>
+
+                    <hr class="text-muted opacity-25 my-0">
+
+                    <!-- Shipping -->
+                    <div class="d-flex gap-2 align-items-start">
+                        <i class="bi bi-truck text-muted mt-1"></i>
+                        <div>
+                            <p class="small fw-semibold mb-0">Shipping</p>
+                            <p class="small text-muted mb-0" id="shipping-info"></p>
+                        </div>
+                    </div>
+
+                    <!-- Warranty -->
+                    <div class="d-flex gap-2 align-items-start">
+                        <i class="bi bi-shield-check text-muted mt-1"></i>
+                        <div>
+                            <p class="small fw-semibold mb-0">Warranty</p>
+                            <p class="small text-muted mb-0" id="warranty-info"></p>
+                        </div>
+                    </div>
+
+                    <!-- Return Policy -->
+                    <div class="d-flex gap-2 align-items-start">
+                        <i class="bi bi-arrow-return-left text-muted mt-1"></i>
+                        <div>
+                            <p class="small fw-semibold mb-0">Returns</p>
+                            <p class="small text-muted mb-0" id="return-policy"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="related-section container">
+        <h2 class="products-title mb-4">Related Products</h2>
+        <div class="related-grid" id="related-grid"></div>
+    </section>
+    
+</body>
+</html>
