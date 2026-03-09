@@ -6,7 +6,11 @@ import '../../css/cart.css';
 import { initializeCartPage } from "../services/pages/cartPage.js";
 import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
 
+import { BASE_PATH } from '/js/config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('home-link').href = BASE_PATH;
+
     initializeCartPage();
     updateCartBadge();
 });
