@@ -1,5 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { fetchProductById } from '/js/services/coreServices/fetching/productByIdApiService.js';
 import { mapDataToproductPage } from '/js/services/coreServices/mapping/productPageMapService.js';
 import { renderProductPage } from '/js/services/coreServices/rendering/productPageRenderService.js';

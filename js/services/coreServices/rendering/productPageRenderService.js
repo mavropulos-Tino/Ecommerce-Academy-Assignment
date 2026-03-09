@@ -1,3 +1,7 @@
+import { addToCart, increaseQuantity, decreaseQuantity, getCart } from '/js/services/components/cartService.js';
+import { renderCartButton } from '/js/services/coreServices/rendering/cartButtonRenderService.js';
+import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
+
 export const renderProductPage = product => {
 
     // Breadcrumb
@@ -65,7 +69,6 @@ export const renderProductPage = product => {
             </div>
             <div class="product-stars mb-1">
                 ${'<i class="bi bi-star-fill"></i>'.repeat(Math.round(review.rating))}
-                ${'<i class="bi bi-star"></i>'.repeat(5 - Math.round(review.rating))}
             </div>
             <p class="review-body">${review.comment}</p>
         `;
@@ -77,4 +80,25 @@ export const renderProductPage = product => {
     document.getElementById('shipping-info').textContent = product.shippingInformation;
     document.getElementById('warranty-info').textContent = product.warrantyInformation;
     document.getElementById('return-policy').textContent = product.returnPolicy;
+
+    const btnContainer = document.querySelector('.card-btn');
+    renderCartButton(btnContainer, product);
+
+    btnContainer.addEventListener('click', event => {
+        if (event.target.closest('.btn-add')) {
+            addToCart(product);
+            renderCartButton(btnContainer, product);
+            updateCartBadge();
+        }
+        if (event.target.closest('.btn-increase')) {
+            increaseQuantity(product.id, product.stock);
+            renderCartButton(btnContainer, product);
+            updateCartBadge();
+        }
+        if (event.target.closest('.btn-decrease')) {
+            decreaseQuantity(product.id);
+            renderCartButton(btnContainer, product);
+            updateCartBadge();
+        }
+    });
 };

@@ -1,10 +1,10 @@
-import { addToCart, increaseQuantity, decreaseQuantity } from '/js/services/components/cartService.js';
+import { addToCart, increaseQuantity, decreaseQuantity, getCart } from '/js/services/components/cartService.js';
 import { renderCartButton } from '/js/services/coreServices/rendering/cartButtonRenderService.js';
 import { updateCartBadge } from '/js/services/components/cartBadgeService.js';
 
 import { BASE_PATH } from '/js/config.js';
 
-export const renderProductCards = (productCardsArray, containerId = 'product-grid') => {
+export const renderProductCards = (productCardsArray, containerId = 'product-grid', cartItem = false) => {
     const grid = document.querySelector(`.${containerId}`);
 
     productCardsArray.forEach(productCard => {
@@ -48,9 +48,14 @@ export const renderProductCards = (productCardsArray, containerId = 'product-gri
                 updateCartBadge();
             }
             if(event.target.closest('.btn-decrease')) {
-                decreaseQuantity(productCard.id);
+                decreaseQuantity(productCard.id, cartItem);
                 renderCartButton(btnContainer, productCard);
                 updateCartBadge();
+
+                if(cartItem) {
+                    const stillInCart = getCart().find(item => item.id === productCard.id);
+                    if (!stillInCart) card.remove();
+                }
             }
         });
 

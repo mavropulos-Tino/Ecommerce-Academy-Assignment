@@ -2,7 +2,7 @@ const saveToCart = cart => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-const getCart = () => {
+export const getCart = () => {
     const cart = localStorage.getItem('cart');
     if(!cart) {return []}
     return JSON.parse(cart);
@@ -49,7 +49,8 @@ export const increaseQuantity = (id, stock) => {
     item.quantity++;
     saveToCart(cart);
 }
-export const decreaseQuantity = id => {
+
+export const decreaseQuantity = (id, cartItem) => {
     const cart = getCart();
     const item = cart.find(item => item.id === id);
 

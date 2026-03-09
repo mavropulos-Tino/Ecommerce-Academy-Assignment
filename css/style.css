@@ -13,6 +13,8 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.3rem;
   color: #1a1a1a;
+  text-decoration: underline;
+  text-decoration-color: #ffcd35;
 }
 
 .cart-btn {
@@ -92,7 +94,7 @@ body {
   border-radius: 50px;
   padding: 0.65rem 2rem;
   font-size: 0.95rem;
-  background: transparent;
+  background: #ffcd35;
   transition: 250ms;
   font-family: 'Poppins', sans-serif;
   text-decoration: none;
@@ -100,8 +102,7 @@ body {
 }
 
 .hero-cta:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+  background: transparent;
 }
 
 
@@ -374,12 +375,11 @@ body {
   font-size: 0.82rem;
   color: #1a1a1a;
   cursor: pointer;
-  transition: background 250ms, color 250ms;
+  transition: 250ms;
 }
 
 .card-btn button[type="button"]:hover {
-  background: #1a1a1a;
-  color: #fff;
+  background: #ffcd35;
 }
 
 .cart-item-controls {
